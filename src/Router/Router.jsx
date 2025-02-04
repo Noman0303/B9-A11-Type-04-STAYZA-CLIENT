@@ -9,6 +9,7 @@ import Rooms from '../pages/Rooms/Rooms';
 import MyBookings from '../pages/MyBookings/MyBookings';
 import AboutUs from '../pages/aboutUs/AboutUs';
 import ContactUs from '../pages/ContactUs/ContactUs';
+import SignUp from '../pages/SignUp/SignUp';
   
   
   const router = createBrowserRouter([
@@ -35,6 +36,10 @@ import ContactUs from '../pages/ContactUs/ContactUs';
         {
           path:"/contactUs",
           element:<ContactUs></ContactUs>
+        },
+        {
+          path:"/signUp",
+          element:<SignUp></SignUp>
         }
       ]
     },

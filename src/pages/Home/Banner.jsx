@@ -64,17 +64,15 @@ const Banner = () => {
 
 
         {/* Green Frame Layer */}
-        <motion.div
+        <div
           className='absolute inset-0 bg-[#054637] flex items-center justify-center z-5'
-          initial={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' }} // Start fully covering the background
-          animate={{ clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 5% 95%, 95% 95%, 95% 5%, 5% 5%, 5% 95%, 0% 100%)' }} // Reveal a rectangle gap in the center
-          transition={{ duration: 1.5, ease: 'easeInOut' }}
+          style={{clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 5% 95%, 95% 95%, 95% 5%, 5% 5%, 5% 95%, 0% 100%)"}}
         >
-        </motion.div>
+        </div>
 
         {/* Brand Name */}
         <motion.h1
-          className='text-7xl font-bold z-10 absolute text-[#FAF9F6]'
+          className='text-7xl font-bold z-10 absolute text-[#FAF9F6] '
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.5, duration: 1.5 }}
