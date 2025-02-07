@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
 @import "tailwindcss";
-@plugin "daisyui";
 @import "leaflet/dist/leaflet.css";
 
+@plugin "daisyui";
+
+
+@theme {
+    --font-dancing-script:"Dancing Script", "serif";
+    --font-pacifico:"Pacifico", serif;
+}
 
   
+

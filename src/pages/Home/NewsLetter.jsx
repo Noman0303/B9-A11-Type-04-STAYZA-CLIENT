@@ -18,10 +18,10 @@ const NewsLetter = () => {
       </div>
 
       <div className='w-2/3 relative z-10 px-6 md:px-10 py-6'>
-        <h2 className='text-3xl font-semibold text-amber-200'> Stay in the Know with Stayza!</h2>
+        <h2 className='text-3xl font-semibold text-amber-200 font-'> Stay in the Know with Stayza!</h2>
         <p className='font-semibold text-yellow-50'>Be the first to hear about our exclusive deals, new offers, and the latest updates straight to your inbox!</p>
         <br />
-        <p className='font-semibold text-white text-xl'> <a href="" className='text-amber-200'>Subscribe</a> to our newsletter and enjoy:</p>
+        <p className='font-semibold text-white text-xl'> <a href="" className='text-amber-200 '>Subscribe</a> to our newsletter and enjoy:</p>
         <ul className='space-y-2 mt-2 list-disc'>
           <li className='text-white'><span className='font-semibold '>Special Discounts</span> for your next stay </li>
           <li className='text-white'><span className='font-semibold '>Early Access</span> to new room features and services.</li>

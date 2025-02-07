@@ -45,12 +45,12 @@ const Navbar = () => {
                         <img className='w-9 hidden lg:block' src={logo} alt="" />
                     </div>
                     <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1 text-lg ">
+                        <ul className="menu menu-horizontal px-1 text-lg text-[#FFFFFF]">
                             {navLinks}
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <button className='btn bg-[#054637] text-white rounded-lg'>Sign In</button>
+                        <button className='btn bg-[#054637] text-white rounded-lg '>Sign In</button>
                        
                     </div>
                 </div>

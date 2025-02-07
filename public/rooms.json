@@ -3,240 +3,419 @@
         "room_name": "Royal Suite - 1",
         "price": 100,
         "description": "A cozy and comfortable room for one person, featuring a plush bed, modern amenities, and a peaceful atmosphere for a restful stay. The room is designed to offer everything a solo traveler might need, with ample storage space and a contemporary design.",
-        "main_image": "royal-suite-1.jpg",
-        "sub_images": ["royal-suite-1-1.jpg", "royal-suite-1-2.jpg", "royal-suite-1-3.jpg", "royal-suite-1-4.jpg"],
+        "main_image": "https://i.ibb.co.com/zTL9Nvkz/royal-suite-1.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/1tCk7Q80/royal-suite-1-1.jpg",
+            "https://i.ibb.co.com/YTpJ3VhK/royal-suite-1-2.jpg",
+            "https://i.ibb.co.com/0jfndNYq/royal-suite-1-3.jpg",
+            "https://i.ibb.co.com/XxYDB5R7/royal-suite-1-4.jpg"
+        ],
         "review": 4.5,
         "room_size": 160,
         "availability": "available",
-        "amenities": ["Wi-Fi", "Air Conditioning", "Tea/Coffee Maker", "Minibar"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "Tea/Coffee Maker",
+            "Minibar"
+        ],
         "view": "Ocean View",
         "bed_type": "King-sized bed",
         "cancellation_policy": "Free cancellation up to 24 hours before check-in",
         "floor_level": "2nd Floor",
         "category": "Deluxe",
         "smoking_policy": "Non-smoking",
-        "features": ["Whirlpool Bath", "Private Terrace"],
+        "features": [
+            "Whirlpool Bath",
+            "Private Terrace"
+        ],
         "special_offer": "10% off on stays longer than 5 nights",
-        "accessibility": ["Wheelchair Accessible", "Accessible Bathroom"]
+        "accessibility": [
+            "Wheelchair Accessible",
+            "Accessible Bathroom"
+        ]
     },
     {
         "room_name": "Palace Suite - 1",
         "price": 150,
         "description": "A romantic room ideal for couples, featuring a king-size bed, elegant décor, and large windows offering a beautiful view of the surroundings. Perfect for a getaway, the room includes extra comforts such as soft lighting, a cozy seating area, and luxurious touches.",
-        "main_image": "palace-suite-1.jpg",
-        "sub_images": ["palace-suite-1-1.jpg", "palace-suite-1-2.jpg", "palace-suite-1-3.jpg", "palace-suite-1-4.jpg"],
+        "main_image": "https://i.ibb.co.com/DfCb4RLk/palace-suite-1.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/9mm9p06D/palace-suite-1-1.jpg",
+            "https://i.ibb.co.com/YBxYHdGQ/palace-suite-1-2.jpg",
+            "https://i.ibb.co.com/7t77R9Zh/palace-suite-1-3.jpg",
+            "https://i.ibb.co.com/0yShs8km/palace-suite-1-4.jpg"
+        ],
         "review": 4.8,
         "room_size": 270,
         "availability": "available",
-        "amenities": ["Wi-Fi", "Air Conditioning", "Flat-screen TV", "Minibar", "Coffee Machine"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "Flat-screen TV",
+            "Minibar",
+            "Coffee Machine"
+        ],
         "view": "City View",
         "bed_type": "King-sized bed",
         "cancellation_policy": "Non-refundable",
         "floor_level": "3rd Floor",
         "category": "Luxury",
         "smoking_policy": "Non-smoking",
-        "features": ["Balcony", "Private Jacuzzi"],
+        "features": [
+            "Balcony",
+            "Private Jacuzzi"
+        ],
         "special_offer": "15% off on weekend stays",
-        "accessibility": ["Accessible Bathroom"]
+        "accessibility": [
+            "Accessible Bathroom"
+        ]
     },
     {
         "room_name": "Sapphire Room - 1",
         "price": 120,
         "description": "This spacious double room offers comfort and convenience with a double bed, a work desk, and a sitting area. Whether you’re traveling with friends or family, the room offers plenty of space to relax and unwind.",
-        "main_image": "sapphire-room-1.jpg",
-        "sub_images": ["sapphire-room-1-1.jpg", "sapphire-room-1-2.jpg", "sapphire-room-1-3.jpg", "sapphire-room-1-4.jpg"],
+        "main_image": "https://i.ibb.co.com/Zpnm33bw/sapphire-room-1.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/1fGYdqsF/sapphire-room-1-1.jpg",
+            "https://i.ibb.co.com/hxkr56MY/sapphire-room-1-2.jpg",
+            "https://i.ibb.co.com/ZpDVKcy4/sapphire-room-1-3.jpg",
+            "https://i.ibb.co.com/c70Ddr2/sapphire-room-1-4.jpg"
+        ],
         "review": 4.3,
         "room_size": 215,
         "availability": "unavailable",
-        "amenities": ["Wi-Fi", "Air Conditioning", "Desk", "Minibar"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "Desk",
+            "Minibar"
+        ],
         "view": "Garden View",
         "bed_type": "Double Bed",
         "cancellation_policy": "Free cancellation up to 48 hours before check-in",
         "floor_level": "1st Floor",
         "category": "Standard",
         "smoking_policy": "Smoking allowed",
-        "features": ["Desk", "Sitting Area"],
+        "features": [
+            "Desk",
+            "Sitting Area"
+        ],
         "special_offer": "None",
-        "accessibility": ["No Accessibility"]
+        "accessibility": [
+            "No Accessibility"
+        ]
     },
     {
         "room_name": "Golden Oasis - 1",
         "price": 90,
         "description": "A compact room with all the essentials for a comfortable stay. Perfect for solo travelers, this room provides a restful bed, modern amenities, and a simple yet pleasant design that meets all your basic needs for an enjoyable stay.",
-        "main_image": "golden-oasis-1.jpg",
-        "sub_images": ["golden-oasis-1-1.jpg", "golden-oasis-1-2.jpg", "golden-oasis-1-3.jpg", "golden-oasis-1-4.jpg"],
+        "main_image": "https://i.ibb.co.com/cm1NHH2/golden-oasis-1.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/KxgqCx4n/golden-oasis-1-1.jpg",
+            "https://i.ibb.co.com/21fjGQQd/golden-oasis-1-2.jpg",
+            "https://i.ibb.co.com/84dhSgYH/golden-oasis-1-3.jpg",
+            "https://i.ibb.co.com/bgVzz7ZT/golden-oasis-1-4.jpg "
+        ],
         "review": 4.1,
         "room_size": 150,
         "availability": "available",
-        "amenities": ["Wi-Fi", "Air Conditioning", "Tea/Coffee Maker"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "Tea/Coffee Maker"
+        ],
         "view": "City View",
         "bed_type": "Single Bed",
         "cancellation_policy": "Free cancellation up to 12 hours before check-in",
         "floor_level": "Ground Floor",
         "category": "Budget",
         "smoking_policy": "Non-smoking",
-        "features": ["Desk"],
+        "features": [
+            "Desk"
+        ],
         "special_offer": "10% off for weekly bookings",
-        "accessibility": ["No Accessibility"]
+        "accessibility": [
+            "No Accessibility"
+        ]
     },
     {
         "room_name": "Queens Heaven - 1",
         "price": 160,
         "description": "An elegant room for couples, featuring a large bed, a private balcony with a scenic view, and cozy interiors that make it perfect for a romantic retreat. The room is designed for ultimate relaxation with modern amenities and thoughtful touches.",
-        "main_image": "queens-heaven-1.jpg",
-        "sub_images": ["queens-heaven-1-1.jpg", "queens-heaven-1-2.jpg", "queens-heaven-1-3.jpg", "queens-heaven-1-4.jpg"],
+        "main_image": "https://i.ibb.co.com/yc50pVGf/queens-heaven-1.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/WN7s0yHD/queens-heaven-1-1.jpg",
+            "https://i.ibb.co.com/678f9C1Y/queens-heaven-1-2.jpg",
+            "https://i.ibb.co.com/FLfGrrST/queens-heaven-1-3.jpg",
+            "https://i.ibb.co.com/mCyTYrnH/queens-heaven-1-4.jpg"
+        ],
         "review": 4.7,
         "room_size": 300,
         "availability": "unavailable",
-        "amenities": ["Wi-Fi", "Air Conditioning", "Mini-fridge", "Flat-screen TV"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "Mini-fridge",
+            "Flat-screen TV"
+        ],
         "view": "Mountain View",
         "bed_type": "King-sized bed",
         "cancellation_policy": "Free cancellation up to 24 hours before check-in",
         "floor_level": "4th Floor",
         "category": "Premium",
         "smoking_policy": "Non-smoking",
-        "features": ["Balcony", "Mini-bar"],
+        "features": [
+            "Balcony",
+            "Mini-bar"
+        ],
         "special_offer": "None",
-        "accessibility": ["Accessible Bathroom"]
+        "accessibility": [
+            "Accessible Bathroom"
+        ]
     },
     {
         "room_name": "Royal Suite - 2",
         "price": 130,
         "description": "A well-furnished room with a double bed, a comfortable lounge area, and plenty of space to stretch out. The room combines style and functionality, offering everything needed for a pleasant stay with great amenities and a relaxing ambiance.",
-        "main_image": "royal-suite-2.jpg",
-        "sub_images": ["royal-suite-2-1.jpg", "royal-suite-2-2.jpg", "royal-suite-2-3.jpg", "royal-suite-2-4.jpg"],
+        "main_image": "https://i.ibb.co.com/gMPTdZ6c/royal-suite-2.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/fYHXjZJc/royal-suite-2-1.jpg",
+            "https://i.ibb.co.com/SXqSh1wH/royal-suite-2-2.jpg",
+            "https://i.ibb.co.com/rG78WHXx/royal-suite-2-3.jpg",
+            "https://i.ibb.co.com/whr1x9vq/royal-suite-2-4.jpg"
+        ],
         "review": 4.4,
         "room_size": 220,
         "availability": "available",
-        "amenities": ["Wi-Fi", "Air Conditioning", "Tea/Coffee Maker", "Minibar"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "Tea/Coffee Maker",
+            "Minibar"
+        ],
         "view": "Garden View",
         "bed_type": "Double Bed",
         "cancellation_policy": "Free cancellation up to 24 hours before check-in",
         "floor_level": "2nd Floor",
         "category": "Deluxe",
         "smoking_policy": "Non-smoking",
-        "features": ["Balcony", "Sitting Area"],
+        "features": [
+            "Balcony",
+            "Sitting Area"
+        ],
         "special_offer": "10% off for stays longer than 7 days",
-        "accessibility": ["No Accessibility"]
+        "accessibility": [
+            "No Accessibility"
+        ]
     },
     {
         "room_name": "Palace Suite - 2",
         "price": 85,
         "description": "A charming room designed for solo travelers who want a cozy space to relax. It includes a comfortable bed, a small desk, and a TV, along with other essential amenities to make your stay enjoyable.",
-        "main_image": "palace-suite-2.jpg",
-        "sub_images": ["palace-suite-2-1.jpg", "palace-suite-2-2.jpg", "palace-suite-2-3.jpg", "palace-suite-2-4.jpg"],
+        "main_image": "https://i.ibb.co.com/DftcyVVb/palace-suite-2.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/TBscLT4X/palace-suite-2-1.jpg",
+            "https://i.ibb.co.com/Xrp29d6X/palace-suite-2-2.jpg",
+            "https://i.ibb.co.com/HLwj9yxV/palace-suite-2-3.jpg",
+            "https://i.ibb.co.com/Qqvvdq8/palace-suite-2-4.jpg"
+        ],
         "review": 4.0,
         "room_size": 130,
         "availability": "available",
-        "amenities": ["Wi-Fi", "Air Conditioning", "TV", "Mini-fridge"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "TV",
+            "Mini-fridge"
+        ],
         "view": "Street View",
         "bed_type": "Single Bed",
         "cancellation_policy": "Free cancellation up to 48 hours before check-in",
         "floor_level": "Ground Floor",
         "category": "Standard",
         "smoking_policy": "Smoking allowed",
-        "features": ["Desk"],
+        "features": [
+            "Desk"
+        ],
         "special_offer": "None",
-        "accessibility": ["No Accessibility"]
+        "accessibility": [
+            "No Accessibility"
+        ]
     },
     {
         "room_name": "Sapphire Room - 2",
         "price": 170,
         "description": "A spacious and modern room designed for couples, featuring a king-size bed, large windows with a beautiful view, and stylish décor that creates a perfect atmosphere for a romantic stay. It includes all modern comforts, ensuring a relaxing experience.",
-        "main_image": "sapphire-room-2.jpg",
-        "sub_images": ["sapphire-room-2-1.jpg", "sapphire-room-2-2.jpg", "sapphire-room-2-3.jpg", "sapphire-room-2-4.jpg"],
+        "main_image": "https://i.ibb.co.com/qH84TFV/sapphire-room-2.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/3mjtmF4F/sapphire-room-2-1.jpg",
+            "https://i.ibb.co.com/vv4WRdT9/sapphire-room-2-2.jpg",
+            "https://i.ibb.co.com/7tsZJb3D/sapphire-room-2-3.jpg",
+            "https://i.ibb.co.com/9kLStx9H/sapphire-room-2-4.jpg"
+        ],
         "review": 4.9,
         "room_size": 325,
         "availability": "available",
-        "amenities": ["Wi-Fi", "Air Conditioning", "TV", "Mini-fridge", "Coffee Machine"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "TV",
+            "Mini-fridge",
+            "Coffee Machine"
+        ],
         "view": "Ocean View",
         "bed_type": "King-sized bed",
         "cancellation_policy": "Non-refundable",
         "floor_level": "3rd Floor",
         "category": "Luxury",
         "smoking_policy": "Non-smoking",
-        "features": ["Jacuzzi", "Private Terrace"],
+        "features": [
+            "Jacuzzi",
+            "Private Terrace"
+        ],
         "special_offer": "15% off for early bookings",
-        "accessibility": ["No Accessibility"]
+        "accessibility": [
+            "No Accessibility"
+        ]
     },
     {
         "room_name": "Golden Oasis - 2",
         "price": 140,
         "description": "This well-appointed room offers a double bed and a variety of amenities for your comfort. The room features a cozy setting and an ideal layout for couples or friends who need extra space to unwind.",
-        "main_image": "golden-oasis-2.jpg",
-        "sub_images": ["golden-oasis-2-1.jpg", "golden-oasis-2-2.jpg", "golden-oasis-2-3.jpg", "golden-oasis-2-4.jpg"],
+        "main_image": "https://i.ibb.co.com/fdwNZChs/golden-oasis-2.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/mrWj6N3s/golden-oasis-2-1.jpg",
+            "https://i.ibb.co.com/WNpfbpRW/golden-oasis-2-2.jpg",
+            "https://i.ibb.co.com/k6gXTgsB/golden-oasis-2-3.jpg",
+            "https://i.ibb.co.com/6Rg0QntN/golden-oasis-2-4.jpg"
+        ],
         "review": 4.2,
         "room_size": 240,
         "availability": "unavailable",
-        "amenities": ["Wi-Fi", "Air Conditioning", "Tea/Coffee Maker", "Mini-fridge"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "Tea/Coffee Maker",
+            "Mini-fridge"
+        ],
         "view": "Garden View",
         "bed_type": "Double Bed",
         "cancellation_policy": "Free cancellation up to 72 hours before check-in",
         "floor_level": "4th Floor",
         "category": "Premium",
         "smoking_policy": "Non-smoking",
-        "features": ["Sitting Area"],
+        "features": [
+            "Sitting Area"
+        ],
         "special_offer": "None",
-        "accessibility": ["No Accessibility"]
+        "accessibility": [
+            "No Accessibility"
+        ]
     },
     {
         "room_name": "Queens Heaven - 2",
         "price": 95,
         "description": "A cozy and bright room perfect for solo travelers, designed to offer comfort and simplicity. It includes a comfortable bed, modern furniture, and a relaxed atmosphere that promotes a peaceful night’s rest.",
-        "main_image": "queens-heaven-2.jpg",
-        "sub_images": ["queens-heaven-2-1.jpg", "queens-heaven-2-2.jpg", "queens-heaven-2-3.jpg", "queens-heaven-2-4.jpg"],
+        "main_image": "https://i.ibb.co.com/HpMsYhJ5/queens-heaven-2.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/8g2gFD18/queens-heaven-2-1.jpg",
+            "https://i.ibb.co.com/39ZkTD7N/queens-heaven-2-2.jpg",
+            "https://i.ibb.co.com/4ZGrDBst/queens-heaven-2-3.jpg",
+            "https://i.ibb.co.com/0pDFJkHQ/queens-heaven-2-4.jpg"
+        ],
         "review": 4.6,
         "room_size": 160,
         "availability": "available",
-        "amenities": ["Wi-Fi", "Air Conditioning", "Tea/Coffee Maker", "Mini-fridge"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "Tea/Coffee Maker",
+            "Mini-fridge"
+        ],
         "view": "Garden View",
         "bed_type": "Single Bed",
         "cancellation_policy": "Free cancellation up to 24 hours before check-in",
         "floor_level": "1st Floor",
         "category": "Budget",
         "smoking_policy": "Non-smoking",
-        "features": ["Desk"],
+        "features": [
+            "Desk"
+        ],
         "special_offer": "None",
-        "accessibility": ["Wheelchair Accessible"]
+        "accessibility": [
+            "Wheelchair Accessible"
+        ]
     },
     {
         "room_name": "Royal Suite - 3",
         "price": 180,
         "description": "A luxurious suite for couples, featuring elegant furniture, expansive windows with a stunning view, and a spacious layout. Perfect for romantic getaways, the room offers premium amenities and a chic, inviting ambiance.",
-        "main_image": "royal-suite-3.jpg",
-        "sub_images": ["royal-suite-3-1.jpg", "royal-suite-3-2.jpg", "royal-suite-3-3.jpg", "royal-suite-3-4.jpg"],
+        "main_image": "https://i.ibb.co.com/ZRRqYwqB/royal-suite-3.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/gFvtZgPS/royal-suite-3-1.jpg",
+            "https://i.ibb.co.com/hJ4DzDym/royal-suite-3-2.jpg",
+            "https://i.ibb.co.com/TxPCsHxb/royal-suite-3-3.jpg",
+            "https://i.ibb.co.com/fGxQ0BN5/royal-suite-3-4.jpg"
+        ],
         "review": 4.8,
         "room_size": 375,
         "availability": "unavailable",
-        "amenities": ["Wi-Fi", "Air Conditioning", "Mini-bar", "Jacuzzi", "Flat-screen TV"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "Mini-bar",
+            "Jacuzzi",
+            "Flat-screen TV"
+        ],
         "view": "Ocean View",
         "bed_type": "King-sized bed",
         "cancellation_policy": "Non-refundable",
         "floor_level": "5th Floor",
         "category": "Luxury",
         "smoking_policy": "Non-smoking",
-        "features": ["Private Balcony", "Private Jacuzzi"],
+        "features": [
+            "Private Balcony",
+            "Private Jacuzzi"
+        ],
         "special_offer": "None",
-        "accessibility": ["No Accessibility"]
+        "accessibility": [
+            "No Accessibility"
+        ]
     },
     {
         "room_name": "Palace Suite - 3",
         "price": 125,
         "description": "A comfortable and stylish double room, ideal for two guests, with a soft bed, modern furniture, and thoughtful design. The room includes a sitting area, a work desk, and easy access to all hotel facilities.",
-        "main_image": "palace-suite-3.jpg",
-        "sub_images": ["palace-suite-3-1.jpg", "palace-suite-3-2.jpg", "palace-suite-3-3.jpg", "palace-suite-3-4.jpg"],
+        "main_image": "https://i.ibb.co.com/dsMMWJ5j/palace-suite-3.jpg",
+        "sub_images": [
+            "https://i.ibb.co.com/4wS99MSf/palace-suite-3-1.jpg",
+            "https://i.ibb.co.com/G3HLHRKk/palace-suite-3-2.jpg",
+            "https://i.ibb.co.com/k6VhchLh/palace-suite-3-3.jpg",
+            "https://i.ibb.co.com/tPKzPLqN/palace-suite-3-4.jpg"
+        ],
         "review": 4.5,
         "room_size": 230,
         "availability": "available",
-        "amenities": ["Wi-Fi", "Air Conditioning", "Mini-fridge", "Flat-screen TV"],
+        "amenities": [
+            "Wi-Fi",
+            "Air Conditioning",
+            "Mini-fridge",
+            "Flat-screen TV"
+        ],
         "view": "Mountain View",
         "bed_type": "Double Bed",
         "cancellation_policy": "Free cancellation up to 48 hours before check-in",
         "floor_level": "3rd Floor",
         "category": "Standard",
         "smoking_policy": "Non-smoking",
-        "features": ["Desk", "Sitting Area"],
+        "features": [
+            "Desk",
+            "Sitting Area"
+        ],
         "special_offer": "None",
-        "accessibility": ["No Accessibility"]
+        "accessibility": [
+            "No Accessibility"
+        ]
     }
 ]

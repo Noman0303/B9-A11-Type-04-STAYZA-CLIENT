@@ -10,6 +10,7 @@ import MyBookings from '../pages/MyBookings/MyBookings';
 import AboutUs from '../pages/aboutUs/AboutUs';
 import ContactUs from '../pages/ContactUs/ContactUs';
 import SignUp from '../pages/SignUp/SignUp';
+import FeaturedRoom from '../pages/Home/FeaturedRoom';
   
   
   const router = createBrowserRouter([
@@ -19,7 +20,8 @@ import SignUp from '../pages/SignUp/SignUp';
       children:[
         {
             path:"/",
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:() =>fetch('http://localhost:5000/rooms')
         },
         {
           path:"/rooms",

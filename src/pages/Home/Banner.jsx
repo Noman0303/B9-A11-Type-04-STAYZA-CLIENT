@@ -1,14 +1,6 @@
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion"
-
-import banner01 from '../../images/banner/banner-1.jpg'
-import banner02 from '../../images/banner/banner-2.jpg'
-import banner03 from '../../images/banner/banner-3.jpg'
-import banner04 from '../../images/banner/banner-4.jpg'
-import banner05 from '../../images/banner/banner-5.jpg'
-import banner06 from '../../images/banner/banner-6.jpg'
-
 import Navbar from '../shared/Navbar'
 
 // Import Swiper React components
@@ -24,19 +16,32 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 
 const Banner = () => {
-  return (
-    <div className='relative'>
 
+  const [startSwiper, setStartSwiper] = useState(false);
+
+  // setting timer on Swiper start time
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStartSwiper(true);
+    }, 2500);
+
+    return () => clearTimeout(timer)
+  }, []);
+
+  return (
+    <div className='relative w-full h-screen flex items-center justify-center overflow-hidden'>
+
+      {/* Navbar animation */}
       <motion.div
-        className='inset-0 z-15 absolute top-7 md:left-6 lg:left-16 right-4 md:right-9 lg:right-18  '
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1.5, duration: 1.5 }}>
+        className='absolute top-5 md:top-7 lg:top-14 md:left-7 lg:left-25 right-4 md:right-11 lg:right-25 z-15'
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 1.2 }}>
         <Navbar></Navbar>
       </motion.div>
 
 
-      <div className='w-full h-screen flex items-center justify-center  overflow-hidden inset-0'>
+     
 
         <>
           <Swiper
@@ -51,36 +56,40 @@ const Banner = () => {
             }}
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper inset-0  w-full h-full object-cover absolute"
+            className="absolute inset-0  w-full h-auto object-cover "
           >
-            <SwiperSlide><img src={banner01} alt="banner-1" /></SwiperSlide>
-            <SwiperSlide><img src={banner02} alt="banner-2" /></SwiperSlide>
-            <SwiperSlide><img src={banner03} alt="banner-3" /></SwiperSlide>
-            <SwiperSlide><img src={banner04} alt="banner-4" /></SwiperSlide>
-            <SwiperSlide><img src={banner05} alt="banner-5" /></SwiperSlide>
-            <SwiperSlide><img src={banner06} alt="banner-6" /></SwiperSlide>
+            <SwiperSlide><img src='https://i.ibb.co.com/KkJD5mQ/banner-1.jpg' alt="banner-1" /></SwiperSlide>
+            <SwiperSlide><img src='https://i.ibb.co.com/N60FtYwd/banner-2.jpg' alt="banner-2" /></SwiperSlide>
+            <SwiperSlide><img src='https://i.ibb.co.com/XZ5yF14c/banner-3.jpg' alt="banner-3" /></SwiperSlide>
+            <SwiperSlide><img src='https://i.ibb.co.com/vxsDb7Qf/banner-4.jpg' alt="banner-4" /></SwiperSlide>
+            <SwiperSlide><img src='https://i.ibb.co.com/LzFNh7Qs/banner-5.jpg' alt="banner-5" /></SwiperSlide>
+            <SwiperSlide><img src='https://i.ibb.co.com/NgsmW70L/banner-6.jpg' alt="banner-6" /></SwiperSlide>
+            <SwiperSlide><img src='https://i.ibb.co.com/5XwPCnHf/banner-7.jpg' alt="banner-7" /></SwiperSlide>
+            <SwiperSlide><img src='https://i.ibb.co.com/35Sqst1v/banner-8.jpg' alt="banner-8" /></SwiperSlide>
           </Swiper>
         </>
 
 
+
         {/* Green Frame Layer */}
         <div
-          className='absolute inset-0 bg-[#054637] flex items-center justify-center z-5'
-          style={{clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 5% 95%, 95% 95%, 95% 5%, 5% 5%, 5% 95%, 0% 100%)"}}
+          className='absolute inset-0 bg-[#054637] flex items-center justify-center z-10 '
+          style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 5% 95%, 95% 95%, 95% 5%, 5% 5%, 5% 95%, 0% 100%)" }}
         >
         </div>
+        <div className='absolute inset-0 z-5 bg-gradient-to-r from-[#054637] via-[#B9A58D]  to-[#D4AF37] opacity-30'></div>
 
         {/* Brand Name */}
         <motion.h1
-          className='text-7xl font-bold z-10 absolute text-[#FAF9F6] '
+          className='text-5xl md:text-7xl lg:text-9xl font-bold z-10 absolute  text-[#D4AF37] font-dancing-script drop-shadow-lg'
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.5, duration: 1.5 }}
+          transition={{ delay: 1, duration: 1.2 }}
         >
-          Stayza
+          Stayza..
         </motion.h1>
       </div>
-    </div>
+    
   )
 }
 
