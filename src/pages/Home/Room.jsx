@@ -12,7 +12,7 @@ const Room = ({ room }) => {
         <div className='absolute inset-0 text-white text-center'>
           <h2 className='text-3xl font-dancing-script'>{room_name}</h2>
           <Link to={`/roomDetails/${_id}`}>
-          <button className='btn mt-10 hover:bg-amber-200'>Book Now</button>
+          <button className='btn mt-10 hover:bg-amber-200  hover:shadow-amber-200 hover:shadow-lg transition-shadow duration-300 '>Book Now</button>
           </Link>
           {/* <p className='text-left'>{description}</p> */}
         </div>

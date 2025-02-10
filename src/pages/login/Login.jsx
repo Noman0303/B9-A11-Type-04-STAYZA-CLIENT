@@ -1,49 +1,38 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
+import Navbar from '../shared/Navbar'
 
-import { AuthContext } from '../provider/AuthProvider'
-import { updateProfile } from 'firebase/auth'
-import { ToastContainer } from 'react-toastify'
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import Navbar from '../shared/Navbar';
-import { Link } from 'react-router-dom';
-
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
-
-const SignUp = () => {
-
-    const { createUser } = useContext(AuthContext)
-    const [showPassword, setShowPassword] = useState(false)
-
-    const handleRegister = e => {
-        e.preventDefault()
-        const form = e.target;
-        const email = form.email.value;
-        const password = form.password.value;
-        const photoURL = form.photoURL.value;
-        const name = form.name.value;
-        console.log(email, password, photoURL, name)
-
-        // Create user in Firebase
-        createUser(email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                return updateProfile(result.user, {
-                    displayName: name,
-                    photoURL: photoURL,
+const Login = () => {
+     const { createUser } = useContext(AuthContext)
+        const [showPassword, setShowPassword] = useState(false)
+    
+        const handleRegister = e => {
+            e.preventDefault()
+            const form = e.target;
+            const email = form.email.value;
+            const password = form.password.value;
+            const photoURL = form.photoURL.value;
+            const name = form.name.value;
+            console.log(email, password, photoURL, name)
+    
+            // Create user in Firebase
+            createUser(email, password)
+                .then(result => {
+                    const user = result.user;
+                    console.log(user);
+                    return updateProfile(result.user, {
+                        displayName: name,
+                        photoURL: photoURL,
+                    })
                 })
-            })
-            .then(() => {
-                toast.success('Registration successful! Welcome!', { autoClose: 3000 });
-            })
-            .catch(() => {
-                console.error(error);
-                toast.error('Registration not successful. Please try again!', { autoClose: 3000 });
-            })
-    }
-
+                .then(() => {
+                    toast.success('Registration successful! Welcome!', { autoClose: 3000 });
+                })
+                .catch(() => {
+                    console.error(error);
+                    toast.error('Registration not successful. Please try again!', { autoClose: 3000 });
+                })
+        }
+        
     return (
         <div>
             <div style={{ backgroundImage: "url('https://i.ibb.co.com/mrq37JBT/SignUp.jpg')" }}
@@ -103,4 +92,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+export default Login
