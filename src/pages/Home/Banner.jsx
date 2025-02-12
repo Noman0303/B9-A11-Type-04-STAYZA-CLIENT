@@ -33,15 +33,12 @@ const Banner = () => {
 
       {/* Navbar animation */}
       <motion.div
-        className='absolute top-5 md:top-7 lg:top-14 md:left-7 lg:left-25 right-4 md:right-11 lg:right-25 z-15'
+        className='absolute top-5 md:top-7 lg:top-14 left-4 md:left-7 lg:left-25 right-4 md:right-11 lg:right-25 z-15 '
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 1.2 }}>
         <Navbar></Navbar>
       </motion.div>
-
-
-     
 
         <>
           <Swiper

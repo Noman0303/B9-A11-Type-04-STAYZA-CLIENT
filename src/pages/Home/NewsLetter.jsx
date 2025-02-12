@@ -13,11 +13,11 @@ const NewsLetter = () => {
       <div className="absolute inset-0 bg-black opacity-40"></div>
 
 
-      <div className='w-1/3 flex justify-center relative z-10 py-6'>
+      <div className='md:w-1/3 flex justify-center relative z-10 py-6'>
         <NewsletterAnimation></NewsletterAnimation>
       </div>
 
-      <div className='w-2/3 relative z-10 px-6 md:px-10 py-6'>
+      <div className='md:w-2/3 relative z-10 px-6 md:px-10 py-6'>
         <h2 className='text-3xl font-semibold text-amber-200 font-'> Stay in the Know with Stayza!</h2>
         <p className='font-semibold text-yellow-50'>Be the first to hear about our exclusive deals, new offers, and the latest updates straight to your inbox!</p>
         <br />

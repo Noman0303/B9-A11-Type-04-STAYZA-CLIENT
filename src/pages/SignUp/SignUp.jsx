@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react'
 
 import { AuthContext } from '../provider/AuthProvider'
-import { updateProfile } from 'firebase/auth'
-import { ToastContainer } from 'react-toastify'
+
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../shared/Navbar';
@@ -30,40 +29,33 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                return updateProfile(result.user, {
-                    displayName: name,
-                    photoURL: photoURL,
-                })
-            })
-            .then(() => {
                 toast.success('Registration successful! Welcome!', { autoClose: 3000 });
             })
             .catch(() => {
-                console.error(error);
+                console.error(error.message);
                 toast.error('Registration not successful. Please try again!', { autoClose: 3000 });
             })
     }
 
     return (
-        <div>
+        <div >
             <div style={{ backgroundImage: "url('https://i.ibb.co.com/mrq37JBT/SignUp.jpg')" }}
-                className="flex flex-col justify-center items-center h-screen bg-cover bg-center relative rounded-t-xl">
-                <div className=" absolute top-0 right-0 md:right-4 left-0 md:left-4 ">
+                className="flex flex-col justify-center items-center min-h-screen bg-cover bg-center relative rounded-t-xl">
+                <div className=" absolute inset-0 md:right-4 md:left-4 ">
                     <Navbar></Navbar>
                 </div>
+                <div className=" absolute top-14 md:top-18 lg:top-24 bg-[rgba(0,0,0,0.2)] hover:backdrop-blur-xs w-full max-w-sm rounded-xl mx-2">
 
-                <div className=" absolute bg-[rgba(0,0,0,0.2)] hover:backdrop-blur-xs w-full max-w-sm rounded-2xl] rounded-xl">
-
-                    <form className="card-body hover:shadow-amber-400 hover:shadow-2xl  " onSubmit={handleRegister}>
+                    <form className=" p-2 lg:card-body hover:shadow-pink-400 hover:shadow-2xl m-2" onSubmit={handleRegister}>
                         <div className="form-control">
                             <label className="label mb-2">
-                                <span className="label-text text-white font-semibold ">Name</span>
+                                <span className="label-text text-white font-semibold">Name</span>
                             </label>
                             <input type="text" name="name" placeholder="Your Name" className="input input-border bg-[rgba(0,0,0,0.1)] text-white font-semibold" required />
                         </div>
                         <div className="form-control">
                             <label className="label mb-2">
-                                <span className="label-text text-white font-semibold">Photo URL</span>
+                                <span className="label-text text-white font-semibold ">Photo URL</span>
                             </label>
                             <input type="url" name="photoURL" placeholder="Photo URL" className="input input-bordered bg-[rgba(0,0,0,0.1)] text-white font-semibold" required />
                         </div>
@@ -82,23 +74,21 @@ const SignUp = () => {
                                 placeholder="password"
                                 className="input input-bordered bg-[rgba(0,0,0,0.1)] text-white font-semibold"
                                 required />
-                            <span className='absolute bottom-4 right-3' onClick={() => setShowPassword(!showPassword)}>
+                            <span className='absolute bottom-4 right-3 cursor-pointer' onClick={() => setShowPassword(!showPassword)}>
                                 {
                                     showPassword ? <FaEyeSlash /> : <FaEye />
                                 }
                             </span>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-[#009688] font-semibold text-lg w-full   hover:shadow-amber-300 hover:shadow-lg text-white">Register</button>
+                            <button className="btn bg-[#009688] font-semibold text-lg w-full hover:shadow-pink-400 hover:shadow-lg text-white">Register</button>
                         </div>
                         <p className='text-center font-semibold mb-4 text-lg text-white mt-4'>Already Have an Account! Please
-                            <Link className='text-amber-300 ' 
+                            <Link className='text-pink-400 font-semibold' 
                             to="/login"> Login</Link> </p>
                     </form>
                 </div>
-
             </div>
-            <ToastContainer></ToastContainer>
         </div >
     )
 }

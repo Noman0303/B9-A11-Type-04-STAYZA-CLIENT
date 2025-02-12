@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import logo from '/logo.png'
-import { toast, ToastContainer } from 'react-toastify';
+
 import { AuthContext } from '../provider/AuthProvider';
 
 
@@ -52,7 +52,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-[base-100] rounded-box z-[1] mt-3 w-52 p-2 shadow ">
+                            className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow text-[#FFFFFF] font-semibold text-xl bg-[#202020]">
                             {navLinks}
                         </ul>
                     </div>
@@ -75,7 +75,7 @@ const Navbar = () => {
 
                 </div>
             </div>
-            <ToastContainer></ToastContainer>
+            
         </div>
     )
 }
