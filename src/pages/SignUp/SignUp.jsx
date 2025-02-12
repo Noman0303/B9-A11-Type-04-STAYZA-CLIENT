@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const SignUp = () => {
 
@@ -36,6 +37,20 @@ const SignUp = () => {
                 toast.error('Registration not successful. Please try again!', { autoClose: 3000 });
             })
     }
+    const handleGoogleLogin = () => {
+        signInGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .then(() => {
+                toast.success('Google Login successful! Welcome!', { autoClose: 3000 });
+            })
+            .catch(() => {
+                console.error(error);
+                toast.error('Googke Login not successful. Please try again!', { autoClose: 3000 });
+            })
+    }
 
     return (
         <div >
@@ -53,12 +68,7 @@ const SignUp = () => {
                             </label>
                             <input type="text" name="name" placeholder="Your Name" className="input input-border bg-[rgba(0,0,0,0.1)] text-white font-semibold" required />
                         </div>
-                        <div className="form-control">
-                            <label className="label mb-2">
-                                <span className="label-text text-white font-semibold ">Photo URL</span>
-                            </label>
-                            <input type="url" name="photoURL" placeholder="Photo URL" className="input input-bordered bg-[rgba(0,0,0,0.1)] text-white font-semibold" required />
-                        </div>
+                        
                         <div className="form-control">
                             <label className="label mb-2">
                                 <span className="label-text text-white font-semibold">Email</span>
@@ -84,9 +94,15 @@ const SignUp = () => {
                             <button className="btn bg-[#009688] font-semibold text-lg w-full hover:shadow-pink-400 hover:shadow-lg text-white">Register</button>
                         </div>
                         <p className='text-center font-semibold mb-4 text-lg text-white mt-4'>Already Have an Account! Please
-                            <Link className='text-pink-400 font-semibold' 
-                            to="/login"> Login</Link> </p>
+                            <Link className='text-pink-400 font-semibold'
+                                to="/login"> Login</Link> </p>
                     </form>
+                    <div className='text-center p-8'>
+                        <p className='text-lg font-semibold text-white '>Or Sign Up with</p>
+                        <button className='btn mt-2 bg-white hover:shadow-amber-300 hover:shadow-lg cursor-pointer w-full'
+                            onClick={handleGoogleLogin}
+                        ><FcGoogle className=' w-7 h-7' /></button>
+                    </div>
                 </div>
             </div>
         </div >

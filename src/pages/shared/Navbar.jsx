@@ -66,7 +66,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ?
-                            <button className='btn bg-[#054637] text-white rounded-lg ' onClick={handleLogOut}>Sign OUt</button> :
+                            <button className='btn bg-[#054637] text-white rounded-lg ' onClick={handleLogOut}>Sign Out</button> :
                             <Link to='/signUp'>
                                 <button className='btn bg-[#054637] text-white rounded-lg '>Sign Up</button>
                             </Link>

@@ -6,7 +6,7 @@ import FeaturedRoom from './FeaturedRoom'
 
 const Home = () => {
     return (
-        <div className='mx-2'>
+        <div className='mx-2 '>
             <Banner></Banner>
             <Map></Map>
             <NewsLetter></NewsLetter>

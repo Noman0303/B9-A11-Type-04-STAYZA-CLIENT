@@ -6,7 +6,7 @@ import 'animate.css';
 
 const Root = () => {
   return (
-    <div className='lg:m-8 md:m-2'>
+    <div className='lg:m-8 md:m-2 font-playfair'>
         <Outlet></Outlet>
         <Footer></Footer>
     </div>
