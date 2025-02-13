@@ -59,9 +59,9 @@ const SignUp = () => {
                 <div className=" absolute inset-0 md:right-4 md:left-4 ">
                     <Navbar></Navbar>
                 </div>
-                <div className=" absolute top-14 md:top-18 lg:top-24 bg-[rgba(0,0,0,0.2)] hover:backdrop-blur-xs w-full max-w-sm rounded-xl mx-2">
+                <div className=" absolute p-4 top-14 md:top-18 lg:top-34 bg-[rgba(0,0,0,0.2)] hover:shadow-2xl  hover:shadow-pink-400 hover:backdrop-blur-xs w-full max-w-sm rounded-xl mx-2">
 
-                    <form className=" p-2 lg:card-body hover:shadow-pink-400 hover:shadow-2xl m-2" onSubmit={handleRegister}>
+                    <form className=" p-6 m-2" onSubmit={handleRegister}>
                         <div className="form-control">
                             <label className="label mb-2">
                                 <span className="label-text text-white font-semibold">Name</span>
@@ -93,16 +93,11 @@ const SignUp = () => {
                         <div className="form-control mt-6">
                             <button className="btn bg-[#009688] font-semibold text-lg w-full hover:shadow-pink-400 hover:shadow-lg text-white">Register</button>
                         </div>
-                        <p className='text-center font-semibold mb-4 text-lg text-white mt-4'>Already Have an Account! Please
+                        <p className='text-center font-semibold text-lg text-white mt-2'>Already Have an Account! Please
                             <Link className='text-pink-400 font-semibold'
                                 to="/login"> Login</Link> </p>
                     </form>
-                    <div className='text-center p-8'>
-                        <p className='text-lg font-semibold text-white '>Or Sign Up with</p>
-                        <button className='btn mt-2 bg-white hover:shadow-amber-300 hover:shadow-lg cursor-pointer w-full'
-                            onClick={handleGoogleLogin}
-                        ><FcGoogle className=' w-7 h-7' /></button>
-                    </div>
+                    
                 </div>
             </div>
         </div >

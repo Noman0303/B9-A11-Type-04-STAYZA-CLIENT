@@ -5,7 +5,9 @@ const Room = ({ room }) => {
   const { room_name, main_image, description, _id } = room
   return (
     <div >
-      <div className=" rounded-xl overflow-hidden shadow-lg relative ">
+      <div className=" rounded-xl overflow-hidden shadow-lg relative "
+       data-aos="zoom-in-up"
+       data-AOS-duration="2000">
         
         <img src={main_image} alt="" className='w-full h-56 object-cover' />
         

@@ -59,9 +59,9 @@ const Login = () => {
                     <Navbar></Navbar>
                 </div>
 
-                <div className=" relative top-4 lg:top-24 bg-[rgba(0,0,0,0.2)] hover:backdrop-blur-xs w-full max-w-sm rounded-xl mx-2">
+                <div className=" relative p-4 top-4 lg:top-10 bg-[rgba(0,0,0,0.2)] hover:shadow-amber-400 hover:shadow-2xl hover:backdrop-blur-xs w-full max-w-sm rounded-xl mx-2">
 
-                    <form className="card-body hover:shadow-amber-400 hover:shadow-2xl  " onSubmit={handleLogin}>
+                    <form className="p-6  " onSubmit={handleLogin}>
                         <div className="form-control">
                             <label className="label mb-2">
                                 <span className="label-text text-white font-semibold">Email</span>
