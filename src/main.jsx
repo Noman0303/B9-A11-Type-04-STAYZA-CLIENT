@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import '../src/index.css'
 import router from './Router/Router.jsx'
-import { RouterProvider, } from "react-router-dom";
+import { RouterProvider} from "react-router-dom";
 import AuthProvider from './pages/provider/AuthProvider.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'animate.css';
