@@ -1,7 +1,9 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from "framer-motion"
 import { useLoaderData } from 'react-router-dom';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -11,7 +13,8 @@ import "swiper/css/thumbs";
 
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import Navbar from '../shared/Navbar';
-
+import Modal from 'react-modal';
+Modal.setAppElement('#root'); // Ensures proper accessibility
 
 import { BiSolidArea } from "react-icons/bi";
 import { IoBedOutline } from "react-icons/io5";
@@ -19,12 +22,75 @@ import { FaBuilding } from "react-icons/fa";
 import { IoLogoNoSmoking } from "react-icons/io";
 import { BiAccessibility } from "react-icons/bi";
 import { FaCircle } from "react-icons/fa";
+import { toast } from 'react-toastify';
+
+
 
 const RoomDetails = () => {
     const roomDetails = useLoaderData();
-    const { room_name, price, description, main_image, sub_images, review, room_size, availability, amenities, view, bed_type, cancellation_policy, floor_level, category, smoking_policy, features, special_offer, accessibility, } = roomDetails;
+    const { room_name, price, description, main_image, sub_images, review, room_size, availability, amenities, view, bed_type, cancellation_policy, floor_level, smoking_policy, features, special_offer, accessibility, _id } = roomDetails;
+
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [room, setRoom] = useState(roomDetails);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [bookingSummary, setBookingSummary] = useState(null);
+
+    const [selectedDate, setSelectedDate] = useState(null);
+    const [dateError, setDateError] = useState(false);
+
+
+
+    const handleBookingClick = () => {
+        const summary = {
+            room_name: room_name,
+            price: price,
+            description: description,
+            bed_type: bed_type,
+            room_size: room_size,
+        };
+        setBookingSummary(summary);
+        setIsModalOpen(true);// Show the modal
+    }
+
+    // Open the modal and set booking summary
+    const handleBookingConfirm = () => {
+        if (!selectedDate) {
+            setDateError(true);
+            return;
+        }
+        // Update room availability & booking date
+        fetch(`http://localhost:5000/roomDetails/${_id}`, {
+            method: 'PATCH',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({
+                availability: 'unavailable', // Set availability to unavailable
+                bookingDate: selectedDate.toISOString(),  // Add the booking date
+            })
+        })
+            .then(res => res.json())
+            .then(updatedRoom => {
+                console.log(updatedRoom);
+
+                if (updatedRoom.modifiedCount > 0) {
+                    setRoom(prevRoom => ({
+                        ...prevRoom,
+                        availability: 'unavailable',
+                        bookingDate: selectedDate.toISOString(),
+                    }))
+                    toast.success("Your Room Booking Confirmed");
+                    setIsModalOpen(false);
+                } else {
+                    toast.error("Failed to update room availability.");
+                }
+            })
+            .catch(error => {
+                console.error('Error during booking confirmation:', error);
+                toast.error("Error occurred while saving booking date.");
+            });
+    }
+
+
 
 
     return (
@@ -137,7 +203,7 @@ const RoomDetails = () => {
 
             {/* Special Features */}
             {
-                features.length > 0 && (
+                features?.length > 0 && (
                     <div className="mt-6 hover:shadow-lg p-2 rounded-lg">
                         <h2 className="text-xl font-semibold">Special Features</h2>
                         <div className="flex flex-wrap gap-2 mt-2">
@@ -161,14 +227,59 @@ const RoomDetails = () => {
                     )}
                 </p>
                 <p className="text-gray-600">📜 {cancellation_policy}</p>
-                {availability === "available" ? (
-                    <button className="mt-4 bg-[#009688] text-white px-6 py-2 rounded-lg hover:bg-[#054637] hover:shadow-lg cursor-pointer">
+
+                {availability === "available" && (
+                    <button className="mt-4 bg-[#009688] text-white px-6 py-2 rounded-lg hover:bg-[#054637] hover:shadow-lg cursor-pointer btn" onClick={handleBookingClick}>
                         Book Now
                     </button>
-                ) :
-                    <></>}
-
+                )}
             </div>
+
+            {/* Modal */}
+            <Modal
+                isOpen={isModalOpen}
+                onRequestClose={() => setIsModalOpen(false)}  // Pass function reference
+                contentLabel="Booking Summary"
+                className=" flex justify-center items-center p-4"
+            // overlayClassName="fixed inset-0 bg-black bg-opacity-90 z-5"
+            >
+                <div className="bg-[#F9F6EE] p-6 rounded-lg shadow-lg max-w-lg w-full">
+                    <h2 className="text-2xl font-semibold mb-4">Booking Summary</h2>
+                    <p><strong>Room Name : </strong>{room_name}</p>
+                    <p><strong>View : </strong>{view}</p>
+                    <p><strong>Price/Night : </strong>$ {price}</p>
+                    <p><strong>Description : </strong>{description}</p>
+                    <p><strong>Bed Type : </strong>{bed_type}</p>
+                    <p><strong>Room Size : </strong>{room_size} sq ft</p>
+
+                    <div className='mt-4'>
+                        <label className="block font-semibold mb-2">Select check-in date</label>
+                        <DatePicker
+                            className="border px-4 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                            selected={selectedDate}
+                            onChange={(date) => {
+                                setSelectedDate(date);
+                                setDateError(false);
+                            }}
+                            dateFormat="yyyy/MM/dd"
+                            minDate={new Date()} // Prevent selecting past dates
+                            placeholderText="Select a date"
+                        ></DatePicker>
+                        {
+                            dateError &&
+                            <p className="text-red-500 text-sm mt-1">Please Select a Date</p>
+                        }
+                    </div>
+
+                    <div className="mt-4 flex gap-4 justify-between">
+                        <button className="bg-gray-300 px-6 py-2 rounded-md hover:bg-gray-400"
+                            onClick={() => setIsModalOpen(false)}>Cancel</button>
+
+                        <button className="bg-[#009688] text-white px-6 py-2 rounded-md cursor-pointer  hover:bg-[#054637]"
+                            onClick={handleBookingConfirm}>Confirm</button>
+                    </div>
+                </div>
+            </Modal>
 
 
         </div >

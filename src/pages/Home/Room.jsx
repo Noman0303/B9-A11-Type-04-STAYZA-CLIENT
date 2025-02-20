@@ -7,7 +7,7 @@ const Room = ({ room }) => {
     <div >
       <div className=" rounded-xl overflow-hidden shadow-lg relative "
        data-aos="zoom-in-up"
-       data-AOS-duration="2000">
+       data-aos-duration="2000">
         
         <img src={main_image} alt="" className='w-full h-56 object-cover' />
         

@@ -10,14 +10,11 @@ const FeaturedRoom = () => {
     // handle view more button
     const handleViewMore = useCallback(() => {
         setVisibileCount(prevCount => prevCount + 3),
-            []
-    })
+            []})
 
 
     return (
         <div className='my-8'>
-
-
             <div className="text-center mb-12">
                 <h2 className="text-2xl md:text-5xl font-bold text-[#054637] font-pacifico">Featured Rooms</h2>
                 <p className="text-lg text-[#202020] font-bold  mt-3">

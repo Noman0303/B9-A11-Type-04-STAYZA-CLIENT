@@ -8,8 +8,8 @@ const RoomsRow = ({ roomsRow }) => {
         <tr >
             <td className=' p-2 flex justify-start' >
                 <Link to={`/roomDetails/${_id}`}>
-                        <div className="  ">
-                            <img src={main_image} alt="" className='h-36 w-36 rounded-xl' />
+                        <div >
+                            <img src={main_image} alt="" className='h-36 w-64  rounded-xl' />
                         </div>
                 </Link>
             </td>
@@ -19,7 +19,6 @@ const RoomsRow = ({ roomsRow }) => {
                 </div>
             </td>
             <td className='font-semibold'>{category}</td>
-            <td className='font-semibold'>{availability}</td>
             <td className='font-semibold'>{view}</td>
             <td className='font-semibold'>$ {price}</td>
             <td className='font-medium' >{review}</td>
