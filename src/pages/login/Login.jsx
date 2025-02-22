@@ -3,15 +3,19 @@ import Navbar from '../shared/Navbar'
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from '../provider/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-    const { signInUser, signInGoogle } = useContext(AuthContext)
-    const [showPassword, setShowPassword] = useState(false)
+    const { signInUser, signInGoogle } = useContext(AuthContext);
+    const [showPassword, setShowPassword] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+
 
     const handleLogin = e => {
         e.preventDefault()
@@ -21,33 +25,34 @@ const Login = () => {
 
         console.log(email, password)
 
+        setIsLoading(true);
         // Login user in Firebase
         signInUser(email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .then(() => {
+                console.log(result.user);
                 toast.success('Login successful! Welcome!', { autoClose: 3000 });
+                // navigate after login
+                navigate(location?.state ? location.state : '/')
             })
-            .catch(() => {
+            .catch(error => {
                 console.error(error);
                 toast.error('Login not successful. Please try again!', { autoClose: 3000 });
             })
-    }
+            .finally(() => setIsLoading(false));
+    };
+
 
     const handleGoogleLogin = () => {
         signInGoogle()
             .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .then(() => {
+                console.log(result.user);
                 toast.success('Google Login successful! Welcome!', { autoClose: 3000 });
+                // navigate after login 
+                navigate(location?.state ? location.state : '/');
             })
-            .catch(() => {
+            .catch(error => {
                 console.error(error);
-                toast.error('Googke Login not successful. Please try again!', { autoClose: 3000 });
+                toast.error('Google Login not successful. Please try again!', { autoClose: 3000 });
             })
     }
 

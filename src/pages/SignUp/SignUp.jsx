@@ -1,7 +1,5 @@
 import React, { useContext, useState } from 'react'
-
 import { AuthContext } from '../provider/AuthProvider'
-
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbar from '../shared/Navbar';
@@ -9,48 +7,32 @@ import { Link } from 'react-router-dom';
 
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
 
 const SignUp = () => {
 
     const { createUser } = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false)
 
+
     const handleRegister = e => {
         e.preventDefault()
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        const photoURL = form.photoURL.value;
         const name = form.name.value;
-        console.log(email, password, photoURL, name)
+        console.log(email, password,name)
 
         // Create user in Firebase
         createUser(email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                console.log(result.user);
                 toast.success('Registration successful! Welcome!', { autoClose: 3000 });
             })
-            .catch(() => {
+            .catch(error => {
                 console.error(error.message);
                 toast.error('Registration not successful. Please try again!', { autoClose: 3000 });
             })
-    }
-    const handleGoogleLogin = () => {
-        signInGoogle()
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .then(() => {
-                toast.success('Google Login successful! Welcome!', { autoClose: 3000 });
-            })
-            .catch(() => {
-                console.error(error);
-                toast.error('Googke Login not successful. Please try again!', { autoClose: 3000 });
-            })
-    }
+    };
 
     return (
         <div >
@@ -68,7 +50,7 @@ const SignUp = () => {
                             </label>
                             <input type="text" name="name" placeholder="Your Name" className="input input-border bg-[rgba(0,0,0,0.1)] text-white font-semibold" required />
                         </div>
-                        
+
                         <div className="form-control">
                             <label className="label mb-2">
                                 <span className="label-text text-white font-semibold">Email</span>
@@ -97,7 +79,7 @@ const SignUp = () => {
                             <Link className='text-pink-400 font-semibold'
                                 to="/login"> Login</Link> </p>
                     </form>
-                    
+
                 </div>
             </div>
         </div >

@@ -21,7 +21,7 @@ const RoomsRow = ({ roomsRow }) => {
             <td className='font-semibold'>{category}</td>
             <td className='font-semibold'>{view}</td>
             <td className='font-semibold'>$ {price}</td>
-            <td className='font-medium' >{review}</td>
+            <td className='font-medium' >{availability}</td>
 
         </tr>
 

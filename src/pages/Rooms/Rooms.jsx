@@ -39,7 +39,7 @@ const Rooms = () => {
       <div className='bg-[#009688]'>
         <Navbar></Navbar>
       </div>
-      <h2 className='text-center text-4xl my-5'>Available Rooms : {rooms.length}</h2>
+      <h2 className='text-center text-4xl my-5'>Total Rooms : {rooms.length}</h2>
 
       {/* Filter & Sort control */}
       <div className="my-4 flex justify-center gap-6">
@@ -85,8 +85,8 @@ const Rooms = () => {
               <th>Rooms Name </th>
               <th>Category</th>
               <th>View</th>
-              <th>Price</th>
-              <th>Review</th>
+              <th>Price/Night</th>
+              <th>Availability</th>
             </tr>
           </thead>
           <tbody>

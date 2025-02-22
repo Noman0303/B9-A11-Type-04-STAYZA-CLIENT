@@ -1,7 +1,7 @@
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { motion } from "framer-motion"
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -23,10 +23,12 @@ import { IoLogoNoSmoking } from "react-icons/io";
 import { BiAccessibility } from "react-icons/bi";
 import { FaCircle } from "react-icons/fa";
 import { toast } from 'react-toastify';
+import { AuthContext } from '../provider/AuthProvider';
 
 
 
 const RoomDetails = () => {
+    const navigate = useNavigate();
     const roomDetails = useLoaderData();
     const { room_name, price, description, main_image, sub_images, review, room_size, availability, amenities, view, bed_type, cancellation_policy, floor_level, smoking_policy, features, special_offer, accessibility, _id } = roomDetails;
 
@@ -39,9 +41,16 @@ const RoomDetails = () => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [dateError, setDateError] = useState(false);
 
+    const { user } = useContext(AuthContext);
+
 
 
     const handleBookingClick = () => {
+
+        if (!user?.email) {
+            return navigate('/login', { state: { from: window.location.pathname } });
+        }
+
         const summary = {
             room_name: room_name,
             price: price,
