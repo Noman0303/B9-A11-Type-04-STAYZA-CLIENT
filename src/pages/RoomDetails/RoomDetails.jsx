@@ -68,38 +68,61 @@ const RoomDetails = () => {
             setDateError(true);
             return;
         }
-        // Update room availability & booking date
-        fetch(`http://localhost:5000/roomDetails/${_id}`, {
+
+        const bookingData = {
+            userEmail: user?.email,
+            roomId: _id,
+            roomName: room_name,
+            price: price,
+            bookingDate: selectedDate,
+            status: "booked"
+        };
+
+
+        // Update room availability in rooms db
+        fetch(`http://localhost:5000/rooms/${_id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
                 availability: 'unavailable', // Set availability to unavailable
-                bookingDate: selectedDate.toISOString(),  // Add the booking date
             })
         })
             .then(res => res.json())
             .then(updatedRoom => {
                 console.log(updatedRoom);
-
-                if (updatedRoom.modifiedCount > 0) {
-                    setRoom(prevRoom => ({
-                        ...prevRoom,
-                        availability: 'unavailable',
-                        bookingDate: selectedDate.toISOString(),
-                    }))
-                    toast.success("Your Room Booking Confirmed");
-                    setIsModalOpen(false);
-                } else {
-                    toast.error("Failed to update room availability.");
-                }
+                 // Update state after successful room availability update
+                 setRoom(prevRoom =>({
+                    ...prevRoom,
+                    availability:'unavailable'
+                 }))
             })
+
+            .catch(error => {
+                console.error('Error updating room availability:', error);
+                toast.error("Error updating room availability.");
+            });
+
+        // create room booking date & userEmail in bookedRooms db
+
+
+        fetch("http://localhost:5000/bookedRooms", {
+            method: "POST",
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(bookingData)
+        })
+
+            .then(res => res.json())
+            .then(updatedRoom => {
+                console.log(updatedRoom);
+                toast.success("Room booked successfully!");
+                setIsModalOpen(false);
+            })
+
             .catch(error => {
                 console.error('Error during booking confirmation:', error);
                 toast.error("Error occurred while saving booking date.");
             });
     }
-
-
 
 
     return (
@@ -237,11 +260,15 @@ const RoomDetails = () => {
                 </p>
                 <p className="text-gray-600">📜 {cancellation_policy}</p>
 
-                {availability === "available" && (
-                    <button className="mt-4 bg-[#009688] text-white px-6 py-2 rounded-lg hover:bg-[#054637] hover:shadow-lg cursor-pointer btn" onClick={handleBookingClick}>
-                        Book Now
-                    </button>
-                )}
+
+                <button
+                    disabled={availability !== "available"}
+                    className={`mt-4 px-6 py-2 rounded-lg 
+                        ${availability === "available" ? "bg-[#009688] text-white cursor-pointer  hover:bg-[#054637]" : "bg-gray-400 cursor-not-allowed"} `}
+                    onClick={handleBookingClick}>
+                    Book Now
+                </button>
+
             </div>
 
             {/* Modal */}
