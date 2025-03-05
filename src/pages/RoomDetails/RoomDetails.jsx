@@ -71,6 +71,7 @@ const RoomDetails = () => {
 
         const bookingData = {
             userEmail: user?.email,
+            image:main_image,
             roomId: _id,
             roomName: room_name,
             price: price,

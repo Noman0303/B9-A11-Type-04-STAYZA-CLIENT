@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../shared/Navbar'
-import { useLoaderData } from 'react-router-dom'
+// import { useLoaderData } from 'react-router-dom'
 import RoomsRow from './RoomsRow';
 import axios from 'axios';
 

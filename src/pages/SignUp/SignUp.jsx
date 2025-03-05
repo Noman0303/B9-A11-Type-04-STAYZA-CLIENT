@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { updateProfile } from 'firebase/auth';
 
 const SignUp = () => {
 
@@ -26,6 +27,11 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                return updateProfile(result.user,{
+                    displayName:name
+                })
+            })
+            .then(()=>{
                 toast.success('Registration successful! Welcome!', { autoClose: 3000 });
             })
             .catch(error => {

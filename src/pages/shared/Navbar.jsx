@@ -14,7 +14,7 @@ const Navbar = () => {
                 console.log('User logged Out successfully');
                 toast.success('User Log Out successful', { autoClose: 3000 })
             })
-            .catch(error =>{
+            .catch(error => {
                 console.error(error);
             });
     };
@@ -66,7 +66,12 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ?
-                            <button className='btn bg-[#054637] text-white rounded-lg ' onClick={handleLogOut}>Sign Out</button> :
+                            <div className='flex gap-x-4 '>
+                                <p className='font-semibold text-lg flex items-center p-2 text-[#054637] '>{user?.displayName
+                                }</p>
+                                <button className='btn bg-[#054637] text-white rounded-lg ' onClick={handleLogOut}>Sign Out</button>
+                            </div>
+                            :
                             <Link to='/signUp'>
                                 <button className='btn bg-[#054637] text-white rounded-lg '>Sign Up</button>
                             </Link>
@@ -75,7 +80,7 @@ const Navbar = () => {
 
                 </div>
             </div>
-            
+
         </div>
     )
 }

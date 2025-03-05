@@ -1,30 +1,40 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { AuthContext } from '../provider/AuthProvider';
+import Modal from 'react-modal';
+Modal.setAppElement('#root'); // Ensures proper accessibility
 
-const MyBookingRow = ({ myBookings }) => {
-    const { main_image, room_name, price, _id,
-        availability,view, category} = myBookings;
+
+const MyBookingRow = ({ booking,  setIsModalOpen, }) => {
+    const { image, roomName, price, _id,
+    } = booking;
+
+
+    const { user } = useContext(AuthContext);
+
+
+
+
 
     return (
         <tr >
-            <td className=' p-2 flex justify-start' >
-                <Link to={`/roomDetails/${_id}`}>
-                        <div >
-                            <img src={main_image} alt="" className='h-36 w-64  rounded-xl' />
-                        </div>
-                </Link>
+            <td className=' p-2 flex justify-center' >
+                <img src={image} alt="" className='h-36 w-64 rounded-xl ' />
             </td>
-            <td>
-                <div className="flex font-bold items-center ">
-                    <p> {room_name}</p>
-                </div>
-            </td>
-            <td className='font-semibold'>{category}</td>
-            <td className='font-semibold'>{view}</td>
-            <td className='font-semibold'>$ {price}</td>
-            <td className='font-medium' >{availability}</td>
+            <td className='font-semibold text-center'>{roomName}</td>
+            <td className='font-semibold text-center'>$ {price}</td>
+            <td className='font-semibold text-center'>
 
+              <button 
+              className='btn'
+              onClick={()=>setIsModalOpen(true)}>Add Review</button>
+            </td>
+
+            <td className='font-semibold text-center'><button className='btn' >Update</button></td>
+            <td className='font-medium text-center' ><button className='btn'>Delete</button></td>
         </tr>
+
+
+
 
     )
 }
