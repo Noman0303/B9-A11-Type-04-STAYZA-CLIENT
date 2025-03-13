@@ -37,7 +37,7 @@ const FeaturedRoom = () => {
                 {
                     visibleCount < rooms.length && (
                         <div className='text-right'>
-                            <button className='bg-[#D4AF37] hover:bg-[#B9A58D] text-white rounded-lg px-4 py-2 transition-all'
+                            <button className='bg-[#D4AF37] hover:bg-[#B9A58D] text-white rounded-lg px-4 py-2 transition-all cursor-pointer'
                                 onClick={handleViewMore} >
                                 View More...
                             </button>

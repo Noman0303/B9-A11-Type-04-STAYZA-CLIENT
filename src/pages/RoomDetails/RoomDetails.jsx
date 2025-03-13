@@ -1,7 +1,7 @@
 
 import React, { useState, useContext } from 'react'
 import { motion } from "framer-motion"
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { useLoaderData, useNavigate, } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -34,14 +34,14 @@ const RoomDetails = () => {
 
 
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    const [room, setRoom] = useState(roomDetails);
+    const [rooms, setRooms] = useState(roomDetails);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [bookingSummary, setBookingSummary] = useState(null);
 
     const [selectedDate, setSelectedDate] = useState(null);
-    const [dateError, setDateError] = useState(false);
+        const [dateError, setDateError] = useState(false);
 
-    const { user } = useContext(AuthContext);
+    const { user} = useContext(AuthContext);
 
 
 
@@ -63,7 +63,7 @@ const RoomDetails = () => {
     }
 
     // Open the modal and set booking summary
-    const handleBookingConfirm = () => {
+    const handleBookingConfirm = id => {
         if (!selectedDate) {
             setDateError(true);
             return;
@@ -71,17 +71,15 @@ const RoomDetails = () => {
 
         const bookingData = {
             userEmail: user?.email,
-            image:main_image,
+            image: main_image,
             roomId: _id,
             roomName: room_name,
             price: price,
             bookingDate: selectedDate,
-            status: "booked"
         };
 
-
         // Update room availability in rooms db
-        fetch(`http://localhost:5000/rooms/${_id}`, {
+        fetch(`http://localhost:5000/rooms/${id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({
@@ -91,20 +89,17 @@ const RoomDetails = () => {
             .then(res => res.json())
             .then(updatedRoom => {
                 console.log(updatedRoom);
-                 // Update state after successful room availability update
-                 setRoom(prevRoom =>({
-                    ...prevRoom,
-                    availability:'unavailable'
-                 }))
+                // Update state after successful room availability update
+                if (updatedRoom.modifiedCount > 0) {
+                    const remaining = rooms.filter(room => room.id !== _id);
+                    const updated = rooms.find(room => room.id === _id);
+                    updated.availability = 'unavailable'
+                    const newRooms = [updated, ...remaining];
+                    setRooms(newRooms);
+                }
             })
 
-            .catch(error => {
-                console.error('Error updating room availability:', error);
-                toast.error("Error updating room availability.");
-            });
-
         // create room booking date & userEmail in bookedRooms db
-
 
         fetch("http://localhost:5000/bookedRooms", {
             method: "POST",
@@ -124,7 +119,6 @@ const RoomDetails = () => {
                 toast.error("Error occurred while saving booking date.");
             });
     }
-
 
     return (
         <div>
@@ -253,7 +247,7 @@ const RoomDetails = () => {
             {/* Booking Section */}
             <div className="mt-6 p-4 my-4 rounded-lg shadow-md">
                 <p className="text-lg font-semibold py-2">
-                    {availability === "available" ? (
+                    {(availability === "available") ? (
                         <span className="text-[#009688] flex gap-2 item-center"><FaCircle className='text-green-400 mt-1' /> Available</span>
                     ) : (
                         <span className="text-red-600 flex gap-2 item-center"><FaCircle className='text-red-400 mt-1' /> Not Available</span>
@@ -266,10 +260,9 @@ const RoomDetails = () => {
                     disabled={availability !== "available"}
                     className={`mt-4 px-6 py-2 rounded-lg 
                         ${availability === "available" ? "bg-[#009688] text-white cursor-pointer  hover:bg-[#054637]" : "bg-gray-400 cursor-not-allowed"} `}
-                    onClick={handleBookingClick}>
+                    onClick={() => handleBookingClick()}>
                     Book Now
                 </button>
-
             </div>
 
             {/* Modal */}
@@ -313,7 +306,7 @@ const RoomDetails = () => {
                             onClick={() => setIsModalOpen(false)}>Cancel</button>
 
                         <button className="bg-[#009688] text-white px-6 py-2 rounded-md cursor-pointer  hover:bg-[#054637]"
-                            onClick={handleBookingConfirm}>Confirm</button>
+                            onClick={() => handleBookingConfirm(_id)}>Confirm</button>
                     </div>
                 </div>
             </Modal>
@@ -323,4 +316,4 @@ const RoomDetails = () => {
     )
 }
 
-export default RoomDetails
+export default RoomDetails;

@@ -67,9 +67,14 @@ const Navbar = () => {
                     {
                         user ?
                             <div className='flex gap-x-4 '>
-                                <p className='font-semibold text-lg flex items-center p-2 text-[#054637] '>{user?.displayName
-                                }</p>
-                                <button className='btn bg-[#054637] text-white rounded-lg ' onClick={handleLogOut}>Sign Out</button>
+                                <div>
+                                    <p className='font-semibold text-lg p-2 text-[#054637] relative group cursor-pointer'>{user?.displayName}
+                                        <span className='absolute bottom-6 right-12 mb-1 w-full px-2 py-1 opacity-0 group-hover:opacity-100 font-semibold text-lg  text-[#054637] transition-opacity duration-300 '>{user?.email}</span>
+                                    </p>
+
+                                </div>
+
+                                <button className='btn bg-[#054637] text-white rounded-lg  mr-5 md:mr-2' onClick={handleLogOut}>Sign Out</button>
                             </div>
                             :
                             <Link to='/signUp'>
