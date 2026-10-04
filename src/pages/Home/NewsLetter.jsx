@@ -1,13 +1,12 @@
 import React from 'react'
 import NewsletterAnimation from '../../animation/NewsletterAnimation'
-import NewsLetterBackgroundImage from '../../images/newsletter/newsletter-background.jpg'
 import { Link } from 'react-router-dom'
 
 const NewsLetter = () => {
   return (
     <div className='flex flex-col md:flex-row w-full my-4 bg-cover bg-center relative '
       style={{
-        backgroundImage: `url(${NewsLetterBackgroundImage})`,
+        backgroundImage: `url("/images/newsletter/newsletter-background.webp")`,
       }}>
 
       <div className="absolute inset-0 bg-black opacity-40"></div>

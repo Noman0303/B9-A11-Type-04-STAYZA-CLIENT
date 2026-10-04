@@ -21,17 +21,17 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const name = form.name.value;
-        console.log(email, password,name)
+        console.log(email, password, name)
 
         // Create user in Firebase
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                return updateProfile(result.user,{
-                    displayName:name
+                return updateProfile(result.user, {
+                    displayName: name
                 })
             })
-            .then(()=>{
+            .then(() => {
                 toast.success('Registration successful! Welcome!', { autoClose: 3000 });
             })
             .catch(error => {
@@ -42,49 +42,55 @@ const SignUp = () => {
 
     return (
         <div >
-            <div style={{ backgroundImage: "url('https://i.ibb.co.com/mrq37JBT/SignUp.jpg')" }}
-                className="flex flex-col justify-center items-center min-h-screen bg-cover bg-center relative rounded-t-xl">
-                <div className=" absolute inset-0 md:right-4 md:left-4 ">
+            <div style={{ backgroundImage: "url('/images/SignUp/SignUp.webp')" }}
+                className="flex flex-col min-h-screen bg-cover bg-center relative">
+
+                    {/* Navbar stays fixed or at the top naturally */}
+                <div className=" w-full z-10 ">
                     <Navbar></Navbar>
                 </div>
-                <div className=" absolute p-4 top-14 md:top-18 lg:top-34 bg-[rgba(0,0,0,0.2)] hover:shadow-2xl  hover:shadow-pink-400 hover:backdrop-blur-xs w-full max-w-sm rounded-xl mx-2">
 
-                    <form className=" p-6 m-2" onSubmit={handleRegister}>
-                        <div className="form-control">
-                            <label className="label mb-2">
-                                <span className="label-text text-white font-semibold">Name</span>
-                            </label>
-                            <input type="text" name="name" placeholder="Your Name" className="input input-border bg-[rgba(0,0,0,0.1)] text-white font-semibold" required />
-                        </div>
+                {/* Main content wrapper using flex-1 and centering to prevent any overlap */}
+                <div className=" flex flex-1 items-center justify-center px-4 py-12 " >
+                    <div className="bg-[rgba(0,0,0,0.2)] hover:shadow-2xl  hover:shadow-pink-400 hover:backdrop-blur-xs w-full max-w-sm rounded-xl mx-2 transition-all">
+                        <form className=" p-6 m-2" onSubmit={handleRegister}>
+                            <div className="form-control">
+                                <label className="label mb-2">
+                                    <span className="label-text text-white font-semibold">Name</span>
+                                </label>
+                                <input type="text" name="name" placeholder="Your Name" className="input input-border bg-[rgba(0,0,0,0.1)] text-white font-semibold" required />
+                            </div>
 
-                        <div className="form-control">
-                            <label className="label mb-2">
-                                <span className="label-text text-white font-semibold">Email</span>
-                            </label>
-                            <input type="email" name="email" placeholder="email" className="input input-bordered bg-[rgba(0,0,0,0.1)] text-white font-semibold" required />
-                        </div>
-                        <div className="form-control relative">
-                            <label className="label mb-2">
-                                <span className="label-text text-white font-semibold">Password</span>
-                            </label>
-                            <input type={showPassword ? "text" : "password"}
-                                name='password'
-                                placeholder="password"
-                                className="input input-bordered bg-[rgba(0,0,0,0.1)] text-white font-semibold"
-                                required />
-                            <span className='absolute bottom-4 right-3 cursor-pointer' onClick={() => setShowPassword(!showPassword)}>
-                                {
-                                    showPassword ? <FaEyeSlash /> : <FaEye />
-                                }
-                            </span>
-                        </div>
-                        <div className="form-control mt-6">
-                            <button className="btn bg-[#009688] font-semibold text-lg w-full hover:shadow-pink-400 hover:shadow-lg text-white">Register</button>
-                        </div>
-                        <p className='text-center font-semibold text-lg text-white mt-2'>Already Have an Account! Please
-                            <Link className='text-pink-400 font-semibold'
-                                to="/login"> Login</Link> </p>
-                    </form>
+                            <div className="form-control">
+                                <label className="label mb-2">
+                                    <span className="label-text text-white font-semibold">Email</span>
+                                </label>
+                                <input type="email" name="email" placeholder="email" className="input input-bordered bg-[rgba(0,0,0,0.1)] text-white font-semibold" required />
+                            </div>
+                            <div className="form-control relative">
+                                <label className="label mb-2">
+                                    <span className="label-text text-white font-semibold">Password</span>
+                                </label>
+                                <input type={showPassword ? "text" : "password"}
+                                    name='password'
+                                    placeholder="password"
+                                    className="input input-bordered bg-[rgba(0,0,0,0.1)] text-white font-semibold"
+                                    required />
+                                <span className='absolute bottom-4 right-3 cursor-pointer' onClick={() => setShowPassword(!showPassword)}>
+                                    {
+                                        showPassword ? <FaEyeSlash /> : <FaEye />
+                                    }
+                                </span>
+                            </div>
+                            <div className="form-control mt-6">
+                                <button className="btn bg-[#009688] font-semibold text-lg w-full hover:shadow-pink-400 hover:shadow-lg text-white">Register</button>
+                            </div>
+                            <p className='text-center font-semibold text-lg text-white mt-2'>Already Have an Account! Please
+                                <Link className='text-pink-400 font-semibold'
+                                    to="/login"> Login</Link> </p>
+                        </form>
+                    </div>
+
 
                 </div>
             </div>

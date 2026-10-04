@@ -14,5 +14,25 @@
     --font-playfair:"Playfair Display", serif;
 }
 
+/* Animated 3D Logo Styling */
+.animated-logo {
+  width: 70px;
+  height: auto;
+  animation: floatLogo 4s ease-in-out infinite;
+  transition: transform 0.5s ease;
+}
+
+@keyframes floatLogo {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+}
+
+.animated-logo:hover {
+  transform: scale(1.08) rotate(5deg);
+}
   
 

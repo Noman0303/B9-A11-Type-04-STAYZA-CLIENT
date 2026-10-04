@@ -55,14 +55,14 @@ const Banner = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="absolute inset-0  w-full h-auto object-cover "
           >
-            <SwiperSlide><img src='https://i.ibb.co.com/KkJD5mQ/banner-1.jpg' alt="banner-1" /></SwiperSlide>
-            <SwiperSlide><img src='https://i.ibb.co.com/N60FtYwd/banner-2.jpg' alt="banner-2" /></SwiperSlide>
-            <SwiperSlide><img src='https://i.ibb.co.com/XZ5yF14c/banner-3.jpg' alt="banner-3" /></SwiperSlide>
-            <SwiperSlide><img src='https://i.ibb.co.com/vxsDb7Qf/banner-4.jpg' alt="banner-4" /></SwiperSlide>
-            <SwiperSlide><img src='https://i.ibb.co.com/LzFNh7Qs/banner-5.jpg' alt="banner-5" /></SwiperSlide>
-            <SwiperSlide><img src='https://i.ibb.co.com/NgsmW70L/banner-6.jpg' alt="banner-6" /></SwiperSlide>
-            <SwiperSlide><img src='https://i.ibb.co.com/5XwPCnHf/banner-7.jpg' alt="banner-7" /></SwiperSlide>
-            <SwiperSlide><img src='https://i.ibb.co.com/35Sqst1v/banner-8.jpg' alt="banner-8" /></SwiperSlide>
+            <SwiperSlide><img src="/images/Banners/banner-1.webp" alt="banner-1" /></SwiperSlide>
+            <SwiperSlide><img src='/images/Banners/banner-2.webp' alt="banner-2" /></SwiperSlide>
+            <SwiperSlide><img src='/images/Banners/banner-3.webp' alt="banner-3" /></SwiperSlide>
+            <SwiperSlide><img src='/images/Banners/banner-4.webp' alt="banner-4" /></SwiperSlide>
+            <SwiperSlide><img src='/images/Banners/banner-5.webp' alt="banner-5" /></SwiperSlide>
+            <SwiperSlide><img src='/images/Banners/banner-6.webp' alt="banner-6" /></SwiperSlide>
+            <SwiperSlide><img src='/images/Banners/banner-7.webp' alt="banner-7" /></SwiperSlide>
+            <SwiperSlide><img src='/images/Banners/banner-8.webp' alt="banner-8" /></SwiperSlide>
           </Swiper>
         </>
 
