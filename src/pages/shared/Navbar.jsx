@@ -56,7 +56,12 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <img className='w-9 hidden lg:block' src={logo} alt="" />
+
+                    {/* Updated 3D Animated Logo with local Firebase path */}
+                    <Link to="/" className='flex items-center'>
+                    <img className='animated-logo hidden lg:block' src="/images/logo/Logo.webp" alt="Stayza Logo" />
+                    </Link>
+                    
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-lg text-[#1B4D3E]">

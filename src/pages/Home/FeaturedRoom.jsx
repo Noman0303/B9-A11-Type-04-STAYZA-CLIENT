@@ -4,13 +4,20 @@ import Room from './Room';
 
 const FeaturedRoom = () => {
     const loadedRooms = useLoaderData();
-    const [rooms, setRooms] = useState(loadedRooms);
+
+    // Safely extract the array whether loadedRooms is directly an array or nested in an object. as data is loaded from backend. 
+
+    const roomArray = Array.isArray(loadedRooms) 
+    ? loadedRooms 
+    : (loadedRooms?.rooms || loadedRooms?.data || []); 
+  
+    // const [rooms, setRooms] = useState(loadedRooms || []);
     const [visibleCount, setVisibileCount] = useState(6);
 
     // handle view more button
     const handleViewMore = useCallback(() => {
-        setVisibileCount(prevCount => prevCount + 3),
-            []})
+        setVisibileCount(prevCount => prevCount + 3)
+    },[])
 
 
     return (
@@ -24,10 +31,9 @@ const FeaturedRoom = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-6 " 
                >
                     {
-                        rooms.slice(0,visibleCount).map(room =>
+                        roomArray.slice(0,visibleCount).map(room =>
                             <Room
                                 key={room._id}
-                                rooms={rooms}
                                 room={room}
                             ></Room>)
                     }
@@ -35,7 +41,7 @@ const FeaturedRoom = () => {
                 </div>
                 
                 {
-                    visibleCount < rooms.length && (
+                    visibleCount < roomArray.length && (
                         <div className='text-right'>
                             <button className='bg-[#D4AF37] hover:bg-[#B9A58D] text-white rounded-lg px-4 py-2 transition-all cursor-pointer'
                                 onClick={handleViewMore} >

@@ -29,14 +29,14 @@ const AboutUs = () => {
           </p>
         </div>
         <div className='animate__animated animate__fadeInRight'>
-          <img src="https://i.ibb.co.com/9H9FtQ1R/About-us.jpg" alt="" className='rounded-xl ' />
+          <img src="/images/AboutUs/About-us.webp" alt="" className='rounded-xl ' />
         </div>
       </section>
 
       <div >
         <div
-          style={{ backgroundImage: "url('https://i.ibb.co.com/mC0y221d/About-us-Our-Story-2.jpg')" }}
-          className='flex flex-col justify-center items-center min-h-screen bg-cover bg-center  text-white'
+          style={{ backgroundImage: "url('/images/AboutUs/About-us-Our-Story-2.webp')" }}
+          className='flex flex-col justify-center items-center min-h-screen bg-cover bg-center  text-white w-full'
           data-aos="zoom-in"
           data-aos-duration="2000"
         >
@@ -57,7 +57,7 @@ const AboutUs = () => {
         </div>
         <div data-aos="flip-left"
           data-aos-duration="2000">
-          <img src="https://i.ibb.co.com/Zp5577LN/About-us-Team.jpg" alt="" border className='rounded-xl shadow-2xl' />
+          <img src="/images/AboutUs/About-us-Team.webp" alt="" border className='rounded-xl shadow-2xl' />
         </div>
         <div className='lg:text-center grid md:col-span-2 lg:col-span-1 md:text-center'
           data-aos="fade-right"
